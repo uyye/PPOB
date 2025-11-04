@@ -6,11 +6,11 @@ const pool = require("../config/db");
             create table if not exists "Transactions"(
                 "id" serial primary key,
                 "user_id" integer references "Users" ("id") on delete cascade on update cascade,
-                "service_id" integer references "Services" ("id") on delete cascade on update cascade,
+                "service_id" integer references "Services" ("id") on delete set null on update cascade,
                 "invoice_number" varchar(50) unique not null,
                 "transaction_type" varchar(50) check ("transaction_type" in ('TOPUP', 'PAYMENT')),
                 "description" text,
-                "total_amount" integer not null,
+                "total_amount" integer not null check ("total_amount" >= 0),
                 "created_at" timestamp default current_timestamp,
                 "updated_at" timestamp default current_timestamp
             );

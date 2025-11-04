@@ -8,7 +8,7 @@ const pool = require("../config/db");
                 "service_code" varchar(100) unique not null,
                 "service_name" varchar(100) not null,
                 "service_icon" text not null,
-                "service_tarif" integer not null,
+                "service_tarif" integer not null check ("service_tarif" >= 0),
                 "created_at" timestamp default current_timestamp,
                 "updated_at" timestamp default current_timestamp
             );
