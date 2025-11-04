@@ -14,7 +14,7 @@ const pool = require("../config/db");
             "created_at" timestamp default current_timestamp,
             "updated_at" timestamp default current_timestamp
         );
-    `
+    `;
 
     const drop_users = `
         drop table if exists "Users";

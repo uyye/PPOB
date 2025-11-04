@@ -4,6 +4,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
+    "migrate-user": "node migrations/createUserTable.js",
+    "migrate-banner": "node migrations/createBannerTable.js",
+    "migrate-service": "node migrations/createServiceTable.js",
+    "migrate-transaction": "node migrations/createTransactionTable.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
