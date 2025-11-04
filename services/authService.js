@@ -1,6 +1,6 @@
-const { signToken } = require("../../../../../J_kampus/Tani-Mart/server/helpers/jwt");
 const pool = require("../config/db");
 const { hashPassword, comparePassword } = require("../utils/bcrypt");
+const { signToken } = require("../utils/jsonwebtoken");
 const UserService = require("./userService");
 
 class AuthService {
