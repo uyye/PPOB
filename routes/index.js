@@ -13,6 +13,10 @@ const UserController = require("../controllers/userController");
 const TransactionController = require("../controllers/transactionController");
 const { topUpSchema } = require("../validations/transactionValidation");
 
+routes.get("", (req, res)=>{
+    res.send("Selamat datang di API PPOB")
+})
+
 // Auth
 routes.post("/registration", validate(userCreateSchema), AuthController.register)
 routes.post("/login", validate(userLoginSchema), AuthController.login)
